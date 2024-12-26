@@ -47,10 +47,15 @@ $ npm run start:prod
 
 
 
-Part 01 - database and env file setup 
-Part 02 - Setting up the modules
+1. Part 01 - database and env file setup 
+2. Part 02 - Setting up the modules
+
 Mention below is the link for creating the module
 https://docs.nestjs.com/recipes/crud-generator
 
 cmd uses:-
 nest g resorce users --no-spec // This cmd will create the user CRUD module along with the dto and entities
+
+3. Part 03 - Setting up the migrations in packagejson and data-source.ts file
+cmd:  npm run migration:generate -- db/migrations/initial // To create the migration
+❯ npm run migration:run // to run the migration
