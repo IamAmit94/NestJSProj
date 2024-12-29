@@ -57,10 +57,15 @@ cmd uses:-
 nest g resorce users --no-spec // This cmd will create the user CRUD module along with the dto and entities
 
 3. Part 03 - Setting up the migrations in packagejson and data-source.ts file and setting up the global prefix and save data to db
-cmd:  npm run migration:generate -- db/migrations/initial // To create the migration
-❯ npm run migration:run // to run the migration
+
+cmd:  npm run migration:generate -- db/migrations/migrationNAme // To create the migration
+      npm run migration:run // to run the migration
 
 
 4. Part 04: Data validation with class validator & transformer
 
 npm i --save class-validator class-transformer
+
+5. Part 05: Password hashing and update user dto
+         npm i jsonwebtoken @types/json
+         npm i bcrypt
