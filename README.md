@@ -54,7 +54,7 @@ Mention below is the link for creating the module
 https://docs.nestjs.com/recipes/crud-generator
 
 cmd uses:-
-nest g resorce users --no-spec // This cmd will create the user CRUD module along with the dto and entities
+nest g resource users --no-spec // This cmd will create the user CRUD module along with the dto and entities
 
 3. Part 03 - Setting up the migrations in packagejson and data-source.ts file and setting up the global prefix and save data to db
 
@@ -67,5 +67,8 @@ cmd:  npm run migration:generate -- db/migrations/migrationNAme // To create the
 npm i --save class-validator class-transformer
 
 5. Part 05: Password hashing and update user dto
+
          npm i jsonwebtoken @types/json
          npm i bcrypt
+
+6. Part 06: AccessTOken and signIn API of user
