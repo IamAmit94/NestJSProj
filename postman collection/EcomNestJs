@@ -1,0 +1,875 @@
+{
+	"info": {
+		"_postman_id": "ed4c929a-66e1-47ea-aa41-9ed0d31a4151",
+		"name": "PostMan Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31881233"
+	},
+	"item": [
+		{
+			"name": "Ecommerce",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Signup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test3\",\r\n    \"email\": \"test3@email.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{users}}/signup",
+									"host": [
+										"{{url}}{{users}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SignIn",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test3@email.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{users}}/signin",
+									"host": [
+										"{{url}}{{users}}"
+									],
+									"path": [
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "My Profile",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test2@email.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{users}}/me?",
+									"host": [
+										"{{url}}{{users}}"
+									],
+									"path": [
+										"me"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "All Users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test2@email.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{users}}/all",
+									"host": [
+										"{{url}}{{users}}"
+									],
+									"path": [
+										"all"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Single User",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}{{users}}/single/1",
+									"host": [
+										"{{url}}{{users}}"
+									],
+									"path": [
+										"single",
+										"1"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test2@email.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{users}}/single/1",
+									"host": [
+										"{{url}}{{users}}"
+									],
+									"path": [
+										"single",
+										"1"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Creat Order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shippingAddress\": {\r\n        \"phone\": \"123456789\",\r\n        \"name\": \"test1\",\r\n        \"address\": \"address_01\",\r\n        \"city\": \"city_01\",\r\n        \"postCode\": \"postCode01\",\r\n        \"state\": \"state01\",\r\n        \"country\": \"country01\"\r\n    },\r\n    \"orderedProducts\": {\r\n        \"product\": \"1\",\r\n        \"product_unit_price\": 200,\r\n        \"product_quantity\": 4\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{orders}}",
+									"host": [
+										"{{url}}{{orders}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Fetch all Order",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shippingAddress\": {\r\n        \"phone\": \"123456789\",\r\n        \"name\": \"test1\",\r\n        \"address\": \"address_01\",\r\n        \"city\": \"city_01\",\r\n        \"postCode\": \"postCode01\",\r\n        \"state\": \"state01\",\r\n        \"country\": \"country01\"\r\n    },\r\n    \"orderedProducts\": {\r\n        \"product\": \"\",\r\n        \"product_unit_price\": 200,\r\n        \"product_quantity\": 4\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{orders}}",
+									"host": [
+										"{{url}}{{orders}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Order by Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shippingAddress\": {\r\n        \"phone\": \"123456789\",\r\n        \"name\": \"test1\",\r\n        \"address\": \"address_01\",\r\n        \"city\": \"city_01\",\r\n        \"postCode\": \"postCode01\",\r\n        \"state\": \"state01\",\r\n        \"country\": \"country01\"\r\n    },\r\n    \"orderedProducts\": {\r\n        \"product\": \"\",\r\n        \"product_unit_price\": 200,\r\n        \"product_quantity\": 4\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{orders}}/1",
+									"host": [
+										"{{url}}{{orders}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update Order",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shippingAddress\": {\r\n        \"phone\": \"123456789\",\r\n        \"name\": \"test1\",\r\n        \"address\": \"address_01\",\r\n        \"city\": \"city_01\",\r\n        \"postCode\": \"postCode01\",\r\n        \"state\": \"state01\",\r\n        \"country\": \"country01\"\r\n    },\r\n    \"orderedProducts\": {\r\n        \"product\": \"\",\r\n        \"product_unit_price\": 200,\r\n        \"product_quantity\": 4\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{orders}}/1",
+									"host": [
+										"{{url}}{{orders}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancel Order",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shippingAddress\": {\r\n        \"phone\": \"123456789\",\r\n        \"name\": \"test1\",\r\n        \"address\": \"address_01\",\r\n        \"city\": \"city_01\",\r\n        \"postCode\": \"postCode01\",\r\n        \"state\": \"state01\",\r\n        \"country\": \"country01\"\r\n    },\r\n    \"orderedProducts\": {\r\n        \"product\": \"\",\r\n        \"product_unit_price\": 200,\r\n        \"product_quantity\": 4\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{orders}}/cancel/1",
+									"host": [
+										"{{url}}{{orders}}"
+									],
+									"path": [
+										"cancel",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Order",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"shippingAddress\": {\r\n        \"phone\": \"123456789\",\r\n        \"name\": \"test1\",\r\n        \"address\": \"address_01\",\r\n        \"city\": \"city_01\",\r\n        \"postCode\": \"postCode01\",\r\n        \"state\": \"state01\",\r\n        \"country\": \"country01\"\r\n    },\r\n    \"orderedProducts\": {\r\n        \"product\": \"\",\r\n        \"product_unit_price\": 200,\r\n        \"product_quantity\": 4\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{orders}}/1",
+									"host": [
+										"{{url}}{{orders}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Create Product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"prod_01\",\r\n    \"description\" : \"This is description of prod_01\",\r\n    \"price\" : 200,\r\n    \"stock\" : 10,\r\n    \"images\" : [\"img1.png\"],\r\n    \"categoryId\" : 1\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{products}}",
+									"host": [
+										"{{url}}{{products}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Fetch Product",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"prod_01\",\r\n    \"description\" : \"This is description of prod_01\",\r\n    \"price\" : 200,\r\n    \"stock\" : 10,\r\n    \"images\" : \"img1.png\",\r\n    \"categoryId\" : 1\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{products}}",
+									"host": [
+										"{{url}}{{products}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Product by Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"prod_01\",\r\n    \"description\" : \"This is description of prod_01\",\r\n    \"price\" : 200,\r\n    \"stock\" : 10,\r\n    \"images\" : \"img1.png\",\r\n    \"categoryId\" : 1\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{products}}/1",
+									"host": [
+										"{{url}}{{products}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"prod_01\",\r\n    \"description\" : \"This is description of prod_01\",\r\n    \"price\" : 200,\r\n    \"stock\" : 10,\r\n    \"images\" : \"img1.png\",\r\n    \"categoryId\" : 1\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{products}}/2",
+									"host": [
+										"{{url}}{{products}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Reviews",
+					"item": [
+						{
+							"name": "Generate Review",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": 1,\r\n    \"ratings\": 3,\r\n    \"comment\" : \"this is avg product ooo\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{reviews}}",
+									"host": [
+										"{{url}}{{reviews}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "review of Product",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{reviews}}",
+									"host": [
+										"{{url}}{{reviews}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "review of Product Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{reviews}}",
+									"host": [
+										"{{url}}{{reviews}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Review by Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{reviews}}/1",
+									"host": [
+										"{{url}}{{reviews}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Review",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{reviews}}/1",
+									"host": [
+										"{{url}}{{reviews}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "create Categories",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"product_012\",\r\n    \"description\" : \"This is the description of product_012\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{categories}}",
+									"host": [
+										"{{url}}{{categories}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Fetch All Categories",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"product_01\",\r\n    \"description\" : \"This is the description of product_01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{categories}}",
+									"host": [
+										"{{url}}{{categories}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"product_01\",\r\n    \"description\" : \"This is the description of product_01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{categories}}/1",
+									"host": [
+										"{{url}}{{categories}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories by ID Copy",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"product_01\",\r\n    \"description\" : \"This is the description of product01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{categories}}/1",
+									"host": [
+										"{{url}}{{categories}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Category",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{Authorization}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"product_01\",\r\n    \"description\" : \"This is the description of product01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}{{categories}}/2",
+									"host": [
+										"{{url}}{{categories}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
